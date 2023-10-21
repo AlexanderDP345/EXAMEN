@@ -3,6 +3,7 @@ import java.util.Date;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
+        //5to y 6to post-it
         CuentaSueldo cuentaSueldo = new CuentaSueldo();
         cuentaSueldo.setSaldoDisponible(1500);
 
