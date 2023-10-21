@@ -23,6 +23,7 @@ public class Main {
         String[] beneficios = {"ropa", "restaurante", "gym", "conciertos", "vuelos", "hotel"};
         cuenta.setBeneficios(beneficios);
         System.out.println(cuenta);
+        //7to y 8to post-it
          
         Cliente cliente = new Cliente("12345", "Juan", "Perez", "123 street", 555123456, 123456789);
 
