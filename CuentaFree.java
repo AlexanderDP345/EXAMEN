@@ -1,6 +1,6 @@
 public class CuentaFree extends CuentaAhorro{
     private boolean numIlimitadoRetiro;
-
+    private String[] beneficios = {"Teatro", "Restaurante", "Cursos"};
     public CuentaFree(boolean numIlimitadoRetiro) {
         this.numIlimitadoRetiro = numIlimitadoRetiro;
     }
@@ -23,6 +23,14 @@ public class CuentaFree extends CuentaAhorro{
         saldoDisponible += interesMensual;
         return interesMensual;
     }
+    public String[] getBeneficios() {
+        return beneficios;
+    }
+
+    public void setBeneficios(String[] beneficios) {
+        this.beneficios = beneficios;
+    }
+
 
     @Override
     public String toString() {
