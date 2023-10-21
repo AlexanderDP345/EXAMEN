@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 public class Main {
     public static void main(String[] args) {
         CuentaSueldo cuentaSueldo = new CuentaSueldo();
@@ -21,34 +23,36 @@ public class Main {
         String[] beneficios = {"ropa", "restaurante", "gym", "conciertos", "vuelos", "hotel"};
         cuenta.setBeneficios(beneficios);
         System.out.println(cuenta);
-         // Crear un cliente
-    Cliente cliente = new Cliente("12345", "Juan", "Perez", "123 street", 555123456, 123456789);
+         
+        Cliente cliente = new Cliente("12345", "Juan", "Perez", "123 street", 555123456, 123456789);
 
-    // Agregar eventos bancarios al cliente (hasta 5 eventos)
-    EventoBancario evento1 = new EventoBancario(new Date(), "Compra en línea", "Se realizó una compra en línea de $100.");
-    EventoBancario evento2 = new EventoBancario(new Date(), "Depósito de salario", "Depósito mensual del salario.");
-    EventoBancario evento3 = new EventoBancario(new Date(), "Retiro en efectivo", "Se retiraron $50 en efectivo de un cajero.");
-    EventoBancario evento4 = new EventoBancario(new Date(), "Pago de factura", "Se pagó una factura de servicios públicos.");
-    EventoBancario evento5 = new EventoBancario(new Date(), "Transferencia bancaria", "Se recibió una transferencia de $200.");
-    EventoBancario evento6 = new EventoBancario(new Date(), "Compra de comestibles", "Se realizó una compra de comestibles por $75.");
-    cliente.agregarEventoBancario(evento1);
-    cliente.agregarEventoBancario(evento2);
-    cliente.agregarEventoBancario(evento3);
-    cliente.agregarEventoBancario(evento4);
-    cliente.agregarEventoBancario(evento5);
-    cliente.agregarEventoBancario(evento6);  // Esto mostrará un mensaje de que se alcanzó el límite de 5 eventos
-    System.out.println(evento1);
-    System.out.println(evento2);
-    System.out.println(evento3);
-    System.out.println(evento4);
-    System.out.println(evento5);
-    System.out.println(evento6);
+        List<EventoBancario> eventos = new ArrayList<>();
+        eventos.add(new EventoBancario(new Date(), "FIESTA BANCARIA", "BLAKDAYFRIDAY"));
+        eventos.add(new EventoBancario(new Date(), "RETIROAFP", "Depósito mensual del salario."));
+        eventos.add(new EventoBancario(new Date(), "RETIRODEGRATI", "Se retiraron $5000 en efectivo de un cajero."));
+        eventos.add(new EventoBancario(new Date(), "FESTBANK", "Se pagó una factura de servicios públicos."));
+        eventos.add(new EventoBancario(new Date(), "NAVIDAD", "Se recibió una transferencia de $200."));
+         eventos.add(new EventoBancario(new Date(), "NAVIDAD2", "Se recibió una transferencia de $200."));
+        for (EventoBancario evento : eventos) {
+            cliente.agregarEventoBancario(evento);
+            
+        }
+        System.out.println("Eventos del Cliente :");
+        for (EventoBancario evento : eventos) {
+    
+    System.out.println("Título: " + evento.getTituloEvento());
+    System.out.println("Descripción: " + evento.getDescripcionEvento());
+    System.out.println("---------------");
+    
+}
     CuentaFree cuentaFree2 = new CuentaFree(true);
 
-    String[] beneficiosStrings = cuentaFree.getBeneficios();
+    
+    String[] beneficiosCuentaFree2 = {"Teatro", "Restaurante", "Cursos"};
+    cuentaFree2.setBeneficios(beneficiosCuentaFree2);
 
-    System.out.println("Beneficios de la cuenta Free:");
-    for (String beneficio : beneficios) {
+    System.out.println("\nBeneficios de la cuenta Free :");
+    for (String beneficio : cuentaFree2.getBeneficios()) {
         System.out.println(beneficio);
     }
     }

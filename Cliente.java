@@ -76,12 +76,14 @@ public class Cliente {
         this.cuentas = cuentas;
     }
     public void agregarEventoBancario(EventoBancario evento) {
-        if (eventosAsistidos < 5) {  
-            eventoBancarios[eventosAsistidos] = evento;  
-            eventosAsistidos++;  
+        if (eventosAsistidos < 5) {
+            eventoBancarios[eventosAsistidos] = evento;
+            eventosAsistidos++;
+        } else {
             System.out.println("Se ha alcanzado el límite de 5 eventos bancarios anuales.");
         }
     }
+    
     
 
     
